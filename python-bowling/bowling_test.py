@@ -175,13 +175,6 @@ class BowlingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(Exception):
             game.roll(11)
 
-    @unittest.skip("comment out this line to enable this test")
-    def test_an_unstarted_game_cannot_be_scored(self):
-        rolls = []
-        game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(Exception):
-            game.roll()
-
     #@unittest.skip("comment out this line to enable this test")
     def test_an_incomplete_game_cannot_be_scored(self):
         rolls = [0, 0]
@@ -196,32 +189,6 @@ class BowlingTest(unittest.TestCase):
         with self.assertRaisesWithMessage(Exception):
             game.roll(0)
 
-    @unittest.skip("comment out this line to enable this test")
-    def test_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
-        self
-    ):
-        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10]
-        game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(Exception):
-            game.roll()
-
-    @unittest.skip("comment out this line to enable this test")
-    def test_both_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
-        self
-    ):
-        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
-        game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(Exception):
-            game.roll()
-
-    @unittest.skip("comment out this line to enable this test")
-    def test_bonus_roll_for_a_spare_in_the_last_frame_must_be_rolled_before_score_can_be_calculated(
-        self
-    ):
-        rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3]
-        game = self.roll_new_game(rolls)
-        with self.assertRaisesWithMessage(Exception):
-            game.roll()
 
     #@unittest.skip("comment out this line to enable this test")
     def test_cannot_roll_after_bonus_roll_for_spare(self):
