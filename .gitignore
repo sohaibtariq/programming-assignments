@@ -48,3 +48,8 @@ htmlcov/
 
 # Windows
 Thumbs.db
+
+# .Net specific files
+bin/
+obj/
+*.sln
